@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:math';
 
+import 'package:chain_reaction_app/common/global.dart';
 import 'package:chain_reaction_app/utils/primary_button.dart';
 import 'package:chain_reaction_app/utils/settings_icon.dart';
 import 'package:flutter/material.dart';
@@ -40,15 +41,15 @@ class _HomePageState extends State<HomePage> {
   // UI
   @override
   Widget build(BuildContext context) {
-    double screenHeight = MediaQuery.of(context).size.height;
-    double dynamicAppBarHeight =
-        screenHeight * 0.1; // Example: 10% of screen height
+    // double screenHeight = MediaQuery.of(context).size.height;
+    // double dynamicHeight =
+    //     screenHeight * 0.1; // Example: 10% of screen height
 
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: Colors.transparent,
-        toolbarHeight: dynamicAppBarHeight,
+        toolbarHeight: calculateAppBarHeight(context),
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 20.0, top: 10.0),
@@ -72,11 +73,10 @@ class _HomePageState extends State<HomePage> {
                   child: SizedBox(
                     // margin: EdgeInsets.all(bgAnimationValue),
                     // alignment: Alignment(0, 0),
-                    height: dynamicAppBarHeight,
+                    height: calculateDesignHeight(context),
                     width: double.infinity,
                     // color: Colors.blue,
-                    child: Image.asset('lib/images/bg_animated.png',
-                        fit: BoxFit.fitWidth),
+                    child: Image.asset(globalDesignImage, fit: BoxFit.fitWidth),
                   ),
                 ),
                 // Positioned(
@@ -89,24 +89,24 @@ class _HomePageState extends State<HomePage> {
                 GestureDetector(
                   onLongPress: () {
                     setState(() {
-                      isSmall = true; // Set to small when long press starts
+                      isSmall = true;
                       // bgAnimationValue = isSmall ? 100.0 : 0.0;
                     });
                   },
                   onLongPressEnd: (details) {
                     setState(() {
-                      isSmall = false; // Set back to big when long press ends
+                      isSmall = false;
                     });
                   },
                   child: Align(
                     alignment: Alignment.topCenter,
                     child: AnimatedContainer(
-                      duration: const Duration(milliseconds: 500),
-                      height: isSmall ? 100 : 300,
+                      duration: const Duration(milliseconds: logoSmallDuration),
+                      height: isSmall ? 100 : calculateLogoSize(context),
                       // color: Colors.blue,
-                      width: isSmall ? 100 : 300,
+                      width: isSmall ? 100 : calculateLogoSize(context),
                       child: Image.asset(
-                        'lib/images/logo3.png',
+                        globalLogoImage,
                         fit: BoxFit.contain,
                       ),
                     ),
@@ -115,7 +115,6 @@ class _HomePageState extends State<HomePage> {
                 ),
                 // ),
                 // ),
-                // // Positioned PrimaryButton
                 Positioned(
                   bottom: 150,
                   left: 0,

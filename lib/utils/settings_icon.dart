@@ -1,3 +1,6 @@
+import 'dart:convert';
+
+import 'package:chain_reaction_app/common/global.dart';
 import 'package:flutter/material.dart';
 
 class CustomSettingsIcon extends StatelessWidget {
@@ -10,15 +13,11 @@ class CustomSettingsIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Calculate dynamic icon size based on screen size
-    double screenWidth = MediaQuery.of(context).size.width;
-    double iconSize = screenWidth * 0.10; // Example: 10% of screen width
-
     return IconButton(
       icon: Icon(
         Icons.settings,
-        size: iconSize,
-        color: Color(0xC60A0E6E),
+        size: calculateIconSize(context) * 1.5,
+        color: Colors.blue[900],
       ),
       onPressed: onPressed,
     );

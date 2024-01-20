@@ -1,3 +1,4 @@
+import 'package:chain_reaction_app/common/global.dart';
 import 'package:flutter/material.dart';
 
 class SelectionBox extends StatelessWidget {
@@ -28,18 +29,21 @@ class SelectionBox extends StatelessWidget {
         height: 60,
         margin: const EdgeInsets.only(top: 20),
         decoration: BoxDecoration(
-          color: Colors.black.withOpacity(0.5),
-          borderRadius: BorderRadius.circular(10),
+          color: globalSelectionBoxBackgroundColor.withOpacity(0.5),
+          borderRadius: BorderRadius.circular(globalSelectionBoxBorderRadius),
           border: Border.all(
-            color:
-                selectedIndex == index ? Colors.blueGrey : Colors.transparent,
+            color: selectedIndex == index
+                ? globalSelectedBorderColor
+                : Colors.transparent,
             width: 3,
           ),
         ),
         child: Icon(
           icon,
           size: iconSize, // Use the iconSize parameter
-          color: selectedIndex == index ? Colors.blueGrey : Colors.grey,
+          color: selectedIndex == index
+              ? globalSelectedBorderColor
+              : globalUnselectedIconColor,
         ),
       ),
     );

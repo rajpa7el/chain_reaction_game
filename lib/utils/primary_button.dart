@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:chain_reaction_app/common/global.dart';
 
 class PrimaryButton extends StatelessWidget {
   final String buttonText;
@@ -12,19 +13,17 @@ class PrimaryButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
-
-    // Adjusting padding and font size with a minimum value
-    double paddingHorizontal = screenWidth * 0.2;
-    double fontSize = screenWidth * 0.04;
-    paddingHorizontal =
-        paddingHorizontal.clamp(16.0, 30.0); // Minimum and maximum padding
-    fontSize = fontSize.clamp(14.0, 18.0); // Minimum and maximum font size
+    Size screenSize = getScreenSize(context);
+    double paddingHorizontal = screenSize.width * 0.2;
+    double fontSize = screenSize.width * 0.04;
+    // paddingHorizontal =
+    // paddingHorizontal.clamp(16.0, 30.0); // Minimum and maximum padding
+    // fontSize = fontSize.clamp(14.0, 18.0); // Minimum and maximum font size
 
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        backgroundColor: Color(0xC60A0E6E),
+        backgroundColor: primaryButtonBackgroundColor.withOpacity(0.3),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(10.0),
         ),
@@ -38,10 +37,10 @@ class PrimaryButton extends StatelessWidget {
           child: Text(
             buttonText,
             style: TextStyle(
-              color: Color(0xFFFFFCF6),
+              color: Colors.white,
               fontSize: fontSize,
-              fontFamily: 'Poppins',
-              fontWeight: FontWeight.w700,
+              fontFamily: globalFontFamily,
+              fontWeight: globalFontWeight,
             ),
           ),
         ),

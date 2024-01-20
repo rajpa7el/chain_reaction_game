@@ -23,7 +23,7 @@ class GamePage extends StatelessWidget {
               //         padding: EdgeInsets.all(50),
               child: Center(
                 child: ElevatedButton(
-                  child: const Text("page ka logic bhadwa raj banayega"),
+                  child: const Text("gamepage logic"),
                   onPressed: () {
                     //navigate to game page
                     Navigator.pushNamed(context, '/homepage');

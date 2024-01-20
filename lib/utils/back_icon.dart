@@ -1,3 +1,4 @@
+import 'package:chain_reaction_app/common/global.dart';
 import 'package:flutter/material.dart';
 
 class CustomBackIcon extends StatelessWidget {
@@ -11,10 +12,10 @@ class CustomBackIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      icon: const Icon(
+      icon: Icon(
         Icons.arrow_back_ios,
-        size: 28,
-        color: Colors.white,
+        size: calculateIconSize(context),
+        color: backIconColor,
       ),
       onPressed: onPressed,
     );
