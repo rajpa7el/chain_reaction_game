@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
         '/homepage': (context) => const HomePage(),
         '/settingspage': (context) => const SettingsPage(),
         '/selectpage': (context) => const SelectPage(),
-        '/gamepage': (context) => const GamePage(),
+        // '/gamepage': (context) => const GamePage(),
       },
 
       // home: Scaffold(

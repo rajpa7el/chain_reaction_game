@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:chain_reaction_app/utils/back_icon.dart';
 import 'package:chain_reaction_app/utils/primary_button.dart';
 import 'package:chain_reaction_app/utils/settings_icon.dart';
+import 'package:chain_reaction_app/pages/game_page.dart';
 
 class SelectPage extends StatefulWidget {
   const SelectPage({Key? key}) : super(key: key);
@@ -46,9 +47,15 @@ class SelectPageState extends State<SelectPage> {
           ),
         ],
       ),
-      body: Column(
+      body:
+          // body: Column(
+          // children: [
+          // Expanded(
+          Column(
         children: [
-          Expanded(
+          Container(
+            height: calculateSelectBoxGridSize(context),
+            width: calculateSelectBoxGridSize(context),
             child: GridView.builder(
               padding: const EdgeInsets.all(20),
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -60,29 +67,59 @@ class SelectPageState extends State<SelectPage> {
               itemBuilder: (context, index) => _buildSelectionBox(index),
             ),
           ),
-          Center(
-            child: Container(
-              child: Align(
-                alignment: Alignment.center,
-                child: Text(
-                  '$_noOfPlayers',
-                  style:
-                      TextStyle(color: Colors.blueGrey, fontSize: numFontSize),
-                ),
+          // Center(
+          Container(
+            child: Align(
+              alignment: Alignment.center,
+              child: Text(
+                '$_noOfPlayers',
+                style: TextStyle(color: Colors.blueGrey, fontSize: numFontSize),
               ),
             ),
           ),
+          // ),
+
           Padding(
-            padding: const EdgeInsets.only(bottom: 80),
+            padding: EdgeInsets.all(50),
             child: PrimaryButton(
               buttonText: 'Start',
               onPressed: () {
-                Navigator.pushNamed(context, '/gamepage');
+                // Navigator.pushNamed(context, '/gamepage')
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => GamePage(noOfPlayers: _noOfPlayers),
+                    ));
               },
             ),
           ),
+          // ),
         ],
       ),
+      // ),
+      //   Center(
+      //     child: Container(
+      //       child: Align(
+      //         alignment: Alignment.center,
+      //         child: Text(
+      //           '$_noOfPlayers',
+      //           style:
+      //               TextStyle(color: Colors.blueGrey, fontSize: numFontSize),
+      //         ),
+      //       ),
+      //     ),
+      //   ),
+      //   Padding(
+      //     padding: const EdgeInsets.all(80),
+      //     child: PrimaryButton(
+      //       buttonText: 'Start',
+      //       onPressed: () {
+      //         Navigator.pushNamed(context, '/gamepage');
+      //       },
+      //     ),
+      //   ),
+      // ],
+      // ),
     );
   }
 

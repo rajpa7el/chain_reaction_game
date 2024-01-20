@@ -14,14 +14,14 @@ Size getScreenSize(BuildContext context) {
 // AppBar height
 double calculateAppBarHeight(BuildContext context) {
   double screenHeight = getScreenSize(context).height;
-  return screenHeight * 0.10; 
+  return screenHeight * 0.10;
 }
 
 // Homepage
 const int logoSmallDuration = 500;
 double calculateDesignHeight(BuildContext context) {
   double screenHeight = getScreenSize(context).height;
-  return screenHeight * 0.15; 
+  return screenHeight * 0.15;
 }
 
 double calculateLogoSize(BuildContext context) {
@@ -40,8 +40,13 @@ final List<IconData> icons = [
   Icons.filter_7,
   Icons.filter_8,
   Icons.filter_9,
-  Icons.group,
+  Icons.groups_2,
 ];
+double calculateSelectBoxGridSize(BuildContext context) {
+  Size screenSize = getScreenSize(context);
+  double averageSize = (screenSize.height + screenSize.width) / 2;
+  return averageSize * 0.65;
+}
 
 // Back icon
 const double backIconSize = 28;
