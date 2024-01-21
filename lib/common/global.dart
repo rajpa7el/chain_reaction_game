@@ -11,6 +11,9 @@ Size getScreenSize(BuildContext context) {
   return Size(queryData.size.width, queryData.size.height);
 }
 
+//main.dart
+const Color globalBackgroundColor = Color(0xFF05111f);
+
 // AppBar height
 double calculateAppBarHeight(BuildContext context) {
   double screenHeight = getScreenSize(context).height;
@@ -23,7 +26,6 @@ double calculateDesignHeight(BuildContext context) {
   double screenHeight = getScreenSize(context).height;
   return screenHeight * 0.15;
 }
-
 double calculateLogoSize(BuildContext context) {
   Size screenSize = getScreenSize(context);
   double averageSize = (screenSize.height + screenSize.width) / 2;
@@ -47,6 +49,21 @@ double calculateSelectBoxGridSize(BuildContext context) {
   double averageSize = (screenSize.height + screenSize.width) / 2;
   return averageSize * 0.65;
 }
+
+//GamePage
+final List<Color> playerColors = [
+  const Color.fromARGB(255, 255, 0, 0), // PlayerId 1 - Red
+  const Color.fromARGB(255, 0, 255, 0), // PlayerId 2 - Green
+  const Color.fromARGB(255, 0, 0, 255), // PlayerId 3 - Blue
+  const Color.fromARGB(255, 255, 192, 203), // PlayerId 4 -Light Pink
+  const Color.fromARGB(255, 255, 165, 0), // PlayerId 5 - Orange
+  const Color.fromARGB(255, 128, 0, 128), // PlayerId 6 - Dark Pink
+  const Color.fromARGB(255, 255, 255, 0), // PlayerId 7 - Yellow
+  const Color.fromARGB(255, 0, 255, 255), // PlayerId 8 - Cyan
+  const Color.fromARGB(255, 0, 128, 128), // PlayerId 9 - Teal
+  const Color.fromARGB(255, 48, 25, 52), // PlayerId 10 - Dark Purple
+];
+
 
 // Back icon
 const double backIconSize = 28;

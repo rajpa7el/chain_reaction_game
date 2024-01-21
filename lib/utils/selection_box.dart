@@ -6,21 +6,18 @@ class SelectionBox extends StatelessWidget {
   final int selectedIndex;
   final IconData icon;
   final VoidCallback onTap;
-  // final double iconSize;
   const SelectionBox({
     Key? key,
     required this.index,
     required this.selectedIndex,
     required this.icon,
     required this.onTap,
-    // this.iconSize = 24.0,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    // Calculate the icon size based on the screen size
-    double screenWidth = MediaQuery.of(context).size.width;
-    double iconSize = screenWidth * 0.1;
+    Size screenWidth = getScreenSize(context);
+    double iconSize = screenWidth.width * 0.1;
 
     return GestureDetector(
       onTap: onTap,
@@ -40,7 +37,7 @@ class SelectionBox extends StatelessWidget {
         ),
         child: Icon(
           icon,
-          size: iconSize, // Use the iconSize parameter
+          size: iconSize,
           color: selectedIndex == index
               ? globalSelectedBorderColor
               : globalUnselectedIconColor,

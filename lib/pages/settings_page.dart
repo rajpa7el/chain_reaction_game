@@ -7,9 +7,6 @@ class SettingsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // double screenHeight = MediaQuery.of(context).size.height;
-    // double dynamicAppBarHeight =
-    //     screenHeight * 0.1; // Example: 10% of screen height
 
     return Scaffold(
       appBar: AppBar(
@@ -31,7 +28,7 @@ class SettingsPage extends StatelessWidget {
               'Settings',
               style: TextStyle(
                   color: Colors.white,
-                  fontSize: calculateIconSize(context),
+                  fontSize: calculateIconSize(context) * 0.8,
                   fontWeight: globalFontWeight),
             ),
           ),

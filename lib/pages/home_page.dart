@@ -41,10 +41,6 @@ class _HomePageState extends State<HomePage> {
   // UI
   @override
   Widget build(BuildContext context) {
-    // double screenHeight = MediaQuery.of(context).size.height;
-    // double dynamicHeight =
-    //     screenHeight * 0.1; // Example: 10% of screen height
-
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -65,32 +61,20 @@ class _HomePageState extends State<HomePage> {
         children: [
           Expanded(
             child: Stack(
-              // alignment: Alignment.topCenter,
               children: [
                 AnimatedContainer(
                   duration: Duration(milliseconds: _getRandomDuration()),
                   alignment: Alignment(0, position),
                   child: SizedBox(
-                    // margin: EdgeInsets.all(bgAnimationValue),
-                    // alignment: Alignment(0, 0),
                     height: calculateDesignHeight(context),
                     width: double.infinity,
-                    // color: Colors.blue,
                     child: Image.asset(globalDesignImage, fit: BoxFit.fitWidth),
                   ),
                 ),
-                // Positioned(
-                //   // top: 50,
-                //   left: 0,
-                //   right: 0,
-                //   child: Align(
-                //     alignment: Alignment.center,
-                //     child: GestureDetector(
                 GestureDetector(
                   onLongPress: () {
                     setState(() {
                       isSmall = true;
-                      // bgAnimationValue = isSmall ? 100.0 : 0.0;
                     });
                   },
                   onLongPressEnd: (details) {
@@ -111,10 +95,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                   ),
-                  // ),
                 ),
-                // ),
-                // ),
                 Positioned(
                   bottom: 150,
                   left: 0,
@@ -132,15 +113,6 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
-          // Padding(
-          //   padding: const EdgeInsets.only(bottom: 100.0),
-          //   child: PrimaryButton(
-          //     buttonText: 'Play',
-          //     onPressed: () {
-          //       Navigator.pushNamed(context, '/selectpage');
-          //     },
-          //   ),
-          // ),
         ],
       ),
     );

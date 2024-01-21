@@ -16,9 +16,6 @@ class PrimaryButton extends StatelessWidget {
     Size screenSize = getScreenSize(context);
     double paddingHorizontal = screenSize.width * 0.2;
     double fontSize = screenSize.width * 0.04;
-    // paddingHorizontal =
-    // paddingHorizontal.clamp(16.0, 30.0); // Minimum and maximum padding
-    // fontSize = fontSize.clamp(14.0, 18.0); // Minimum and maximum font size
 
     return ElevatedButton(
       onPressed: onPressed,
@@ -33,7 +30,7 @@ class PrimaryButton extends StatelessWidget {
             EdgeInsets.symmetric(horizontal: paddingHorizontal, vertical: 15.0),
         child: FittedBox(
           fit: BoxFit
-              .scaleDown, // Ensures the text scales down if it doesn't fit
+              .scaleDown,
           child: Text(
             buttonText,
             style: TextStyle(
