@@ -1,6 +1,6 @@
-// import 'dart:developer';
-
 import 'package:chain_reaction_app/common/global.dart';
+import 'package:chain_reaction_app/pages/test/test_page.dart';
+import 'package:chain_reaction_app/pages/test/test_page2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:chain_reaction_app/pages/home_page.dart';
@@ -33,6 +33,8 @@ class MyApp extends StatelessWidget {
         '/settingspage': (context) => const SettingsPage(),
         '/selectpage': (context) => const SelectPage(),
         // '/gamepage': (context) => const GamePage(),
+        '/testpage': (context) => const TestPage(),
+        '/testpage2': (context) => const TestPage2(),
       },
     );
   }

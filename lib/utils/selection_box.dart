@@ -19,12 +19,15 @@ class SelectionBox extends StatelessWidget {
     Size screenWidth = getScreenSize(context);
     double iconSize = screenWidth.width * 0.1;
 
-    return GestureDetector(
+    return InkWell(
       onTap: onTap,
+      splashColor: globalSelectedBorderColor.withOpacity(0.5),
+      highlightColor: Colors.transparent,
+      borderRadius: BorderRadius.circular(globalSelectionBoxBorderRadius),
       child: Container(
-        width: 60,
-        height: 60,
-        margin: const EdgeInsets.only(top: 20),
+        // width: 60,
+        // height: 60,
+        // margin: const EdgeInsets.only(top: 20),
         decoration: BoxDecoration(
           color: globalSelectionBoxBackgroundColor.withOpacity(0.5),
           borderRadius: BorderRadius.circular(globalSelectionBoxBorderRadius),

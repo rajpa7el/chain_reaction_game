@@ -23,6 +23,7 @@ class GamePageState extends State<GamePage> {
 
     double cellSize = screenWidth / numColumns;
     double totalGridHeight = cellSize * numRows;
+    int _currentPlayerId = widget.gameLogic.currentPlayerId;
 
     return Scaffold(
       backgroundColor: Colors.black87,
@@ -43,7 +44,8 @@ class GamePageState extends State<GamePage> {
                   setState(() {
                     //
                     if (kDebugMode) {
-                      print(index);
+                      print("PressedPlayerId: $_currentPlayerId");
+                      print("gridIndex: $index");
                     }
                     //
                     widget.gameLogic.onTapCell(index);
@@ -52,8 +54,7 @@ class GamePageState extends State<GamePage> {
                 child: Container(
                   decoration: BoxDecoration(
                     color: Colors.black,
-                    border: Border.all(
-                        color: playerColors[widget.gameLogic.currentPlayerId]),
+                    border: Border.all(color: playerColors[_currentPlayerId]),
                   ),
                 ),
               );

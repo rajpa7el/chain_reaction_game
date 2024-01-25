@@ -46,10 +46,11 @@
     ],
     "compounds": [
         {
-            "name": "Both Devices",
+            "name": "All 3 Devices",
             "configurations": [
                 "emulator_launch",
-                "Galaxy_launch"
+                "Galaxy_launch",
+                "Chrome_launch"
             ]
         }
     ]

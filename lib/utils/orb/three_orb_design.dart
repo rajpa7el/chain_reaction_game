@@ -1,0 +1,37 @@
+import 'package:chain_reaction_app/utils/orb/orb_design.dart';
+import 'package:flutter/material.dart';
+
+class MultiOrbLayout extends StatelessWidget {
+  final double orbSize;
+  final double spacing;
+
+  const MultiOrbLayout({Key? key, required this.orbSize, this.spacing = 0.0})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        // Two orbs touching each other
+        Row(
+          // crossAxisAlignment: CrossAxisAlignment.baseline,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            OrbDesign(size: orbSize * 0.65),
+          ],
+        ),
+
+        // Three orbs in a triangle touching each other
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            OrbDesign(size: orbSize * 0.65),
+            SizedBox(width: spacing), // Adjust the spacing as needed
+            OrbDesign(size: orbSize * 0.65), // 75% size of the original
+          ],
+        ),
+      ],
+    );
+  }
+}
