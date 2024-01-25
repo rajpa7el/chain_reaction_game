@@ -45,8 +45,8 @@ class GamePageState extends State<GamePage> {
               return GestureDetector(
                 onTap: () {
                   setState(() {
-                    int row = index ~/ numColumns; 
-                    int col = index % numColumns; 
+                    int row = index ~/ numColumns;
+                    int col = index % numColumns;
                     if (kDebugMode) {
                       print('Row: $row, Column: $col, Index: $index');
                     }
@@ -63,7 +63,8 @@ class GamePageState extends State<GamePage> {
                   ),
                   child: Text(
                     widget.gameLogic.cellStates[index]?.toString() ?? '',
-                    style: TextStyle(color: textColor), // Style as needed
+                    style: TextStyle(
+                        color: textColor, fontSize: 45), // Style as needed
                   ),
                 ),
               );
