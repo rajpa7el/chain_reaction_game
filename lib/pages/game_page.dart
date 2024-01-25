@@ -38,22 +38,32 @@ class GamePageState extends State<GamePage> {
               childAspectRatio: 1.0,
             ),
             itemBuilder: (context, index) {
+              int? cellPlayerId = widget.gameLogic.cellColors[index];
+              Color textColor = cellPlayerId != null
+                  ? playerColors[cellPlayerId]
+                  : Colors.white;
               return GestureDetector(
                 onTap: () {
                   setState(() {
-                    //
+                    int row = index ~/ numColumns; 
+                    int col = index % numColumns; 
                     if (kDebugMode) {
-                      print(index);
+                      print('Row: $row, Column: $col, Index: $index');
                     }
                     //
                     widget.gameLogic.onTapCell(index);
                   });
                 },
                 child: Container(
+                  alignment: Alignment.center,
                   decoration: BoxDecoration(
                     color: Colors.black,
                     border: Border.all(
                         color: playerColors[widget.gameLogic.currentPlayerId]),
+                  ),
+                  child: Text(
+                    widget.gameLogic.cellStates[index]?.toString() ?? '',
+                    style: TextStyle(color: textColor), // Style as needed
                   ),
                 ),
               );
