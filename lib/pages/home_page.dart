@@ -106,7 +106,7 @@ class _HomePageState extends State<HomePage> {
                       buttonText: 'Play',
                       onPressed: () {
                         // Navigator.pushNamed(context, '/selectpage');
-                        Navigator.pushNamed(context, '/testpage');
+                        Navigator.pushNamed(context, '/selectpage');
                       },
                     ),
                   ),
