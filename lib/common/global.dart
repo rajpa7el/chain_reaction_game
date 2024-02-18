@@ -47,20 +47,27 @@ double calculateLogoSize(BuildContext context) {
 
 //SelectPage
 final List<IconData> icons = [
+  Icons.groups_2,
   Icons.filter_2,
   Icons.filter_3,
   Icons.filter_4,
-  Icons.filter_5_outlined,
-  Icons.filter_6_sharp,
+  Icons.filter_5,
+  Icons.filter_6,
   Icons.filter_7,
   Icons.filter_8,
   Icons.filter_9,
-  Icons.groups_2,
 ];
 double calculateSelectBoxGridSize(BuildContext context) {
   Size screenSize = getScreenSize(context);
   double averageSize = (screenSize.height + screenSize.width) / 2;
   return averageSize * 0.65;
+}
+
+//gamelogic
+enum CellPosition {
+  corner,
+  edge,
+  center,
 }
 
 //GamePage
@@ -74,7 +81,8 @@ final List<Color> playerColors = [
   const Color.fromARGB(255, 255, 255, 0), // PlayerId 6 - Yellow
   const Color.fromARGB(255, 0, 255, 255), // PlayerId 7 - Cyan
   const Color.fromARGB(255, 0, 128, 128), // PlayerId 8 - Teal
-  const Color.fromARGB(255, 48, 25, 52), // PlayerId 9 - Dark Purple |Total|10|
+  const Color.fromARGB(
+      255, 255, 255, 255), // PlayerId 9 - Dark Purple |Total|10|
 ];
 
 // Back icon

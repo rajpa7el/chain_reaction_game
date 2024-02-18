@@ -4,8 +4,13 @@ import 'package:flutter/material.dart';
 class MultiOrbLayout extends StatelessWidget {
   final double orbSize;
   final double spacing;
+  final Color color;
 
-  const MultiOrbLayout({Key? key, required this.orbSize, this.spacing = 0.0})
+  const MultiOrbLayout(
+      {Key? key,
+      required this.orbSize,
+      this.spacing = 0.0,
+      required this.color})
       : super(key: key);
 
   @override
@@ -18,7 +23,7 @@ class MultiOrbLayout extends StatelessWidget {
           // crossAxisAlignment: CrossAxisAlignment.baseline,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            OrbDesign(size: orbSize * 0.65),
+            OrbDesign(size: orbSize * 0.85, color: color),
           ],
         ),
 
@@ -26,9 +31,10 @@ class MultiOrbLayout extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            OrbDesign(size: orbSize * 0.65),
+            OrbDesign(size: orbSize * 0.85, color: color),
             SizedBox(width: spacing), // Adjust the spacing as needed
-            OrbDesign(size: orbSize * 0.65), // 75% size of the original
+            OrbDesign(
+                size: orbSize * 0.85, color: color), // 75% size of the original
           ],
         ),
       ],

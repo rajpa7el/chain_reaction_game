@@ -28,7 +28,7 @@ class SelectPageState extends State<SelectPage> {
 
   //private variables
   int _noOfPlayers = 2;
-  int _selectedBoxIndex = 0; // -1 is no selection
+  int _selectedBoxIndex = 1; // -1 is no selection
 
   @override
   Widget build(BuildContext context) {
@@ -97,6 +97,8 @@ class SelectPageState extends State<SelectPage> {
   }
 
   Widget _buildSelectionBox(int index) {
+    int displayedNumber =
+        index == 0 ? 10 : index + 1; // Set 10 for index 0, else index + 1
     return SelectionBox(
       index: index,
       selectedIndex: _selectedBoxIndex,
@@ -104,7 +106,7 @@ class SelectPageState extends State<SelectPage> {
       onTap: () {
         setState(() {
           _selectedBoxIndex = index;
-          _noOfPlayers = index + 2;
+          _noOfPlayers = displayedNumber;
         });
       },
     );

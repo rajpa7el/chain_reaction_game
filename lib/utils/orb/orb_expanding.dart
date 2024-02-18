@@ -40,7 +40,7 @@ class _ExpandingOrbState extends State<ExpandingOrb>
       animation: _animation,
       builder: (context, child) {
         double size = widget.baseSize + (_animation.value * widget.baseSize);
-        return OrbDesign(size: size);
+        return OrbDesign(size: size,color: Colors.red);
       },
     );
   }

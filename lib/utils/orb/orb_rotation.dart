@@ -42,7 +42,7 @@ class _RotatingOrbState extends State<RotatingOrb>
   Widget build(BuildContext context) {
     return AnimatedBuilder(
       animation: _controller,
-      child: OrbDesign(size: widget.size),
+      child: OrbDesign(size: widget.size,color: Colors.red),
       builder: (context, child) {
         return Transform(
           alignment: Alignment.center,

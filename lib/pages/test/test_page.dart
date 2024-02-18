@@ -49,14 +49,20 @@ class _TestPageState extends State<TestPage> {
                     border: Border.all(color: playerColors[0]),
                   ),
                   child: orbCount[index] == 1
-                      ? OrbDesign(size: orbSize)
+                      ? OrbDesign(
+                          size: orbSize,
+                          color: Colors.red,
+                        )
                       : orbCount[index] == 2
-                          ? TwoOrbLayout(orbSize: orbSize)
+                          ? TwoOrbLayout(
+                              orbSize: orbSize,
+                              color: Colors.red,
+                            )
                           : orbCount[index] == 3
                               ? MultiOrbLayout(
                                   orbSize: orbSize,
                                   spacing: 1.0,
-                                )
+                                  color: Colors.red)
                               : Container(),
                 ),
               );
