@@ -87,22 +87,23 @@ class GamePageState extends State<GamePage> {
                   ? playerColors[cellPlayerId]
                   : Colors.brown;
 
-              // bool isExploding =
-              //     widget.gameLogic.cellExplosionAnimations[index] ?? false;
+              bool isExploding =
+                  widget.gameLogic.cellExplosionAnimations[index] ?? false;
 
-              // if (isExploding) {
-              //   return ExplosionAnimation(
-              //     size: cellSize, // Use the cell size for the animation size
-              //     color:
-              //         orbColor, // Use the orb color or a specific explosion color
-              //     position: CellPosition
-              //         .center, // Example - determine based on cell position
-              //     onAnimationComplete: () {
-              //       // Reset the explosion state for this cell and rebuild the UI
-              //       widget.gameLogic.resetExplosionAnimation(index);
-              //     },
-              //   );
-              // }
+              if (isExploding) {
+                // return ExplosionAnimation(
+                //   size: cellSize, // Use the cell size for the animation size
+                //   color:
+                //       orbColor, // Use the orb color or a specific explosion color
+                //   onAnimationComplete: () {
+                //     // Reset the explosion state for this cell and rebuild the UI
+                //     widget.gameLogic.resetExplosionAnimation(index);
+                //     setState(() {}); // Trigger a rebuild to update the UI
+                //   },
+                // );
+              } else {
+                // Render the cell normally
+              }
 
               // if (shouldAnimateSplitForCell(index)) {
               //   // Calculate targetOffsets based on cell position and game logic
@@ -113,47 +114,46 @@ class GamePageState extends State<GamePage> {
               //     targetOffsets: targetOffsets,
               //   );
               // } else {
-                return GestureDetector(
-                  onTap: () async {
-                    int row = index ~/ widget.gameLogic.numColumns;
-                    int col = index % widget.gameLogic.numColumns;
-                    if (kDebugMode) {
-                      print('Row: $row, Column: $col, Index: $index');
-                    }
-                    // Await the async operation outside of setState
-                    await widget.gameLogic.onTapCell(index);
-                    // Then call setState to update the UI
-                    setState(() {});
-                  },
-                  child: Container(
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        color: Colors.black,
-                        border:
-                            Border.all(color: playerColors[_currentPlayerId]),
-                      ),
-                      // child: Text(
-                      //   widget.gameLogic.cellStates[index]?.toString() ?? '',
-                      //   style: TextStyle(
-                      //       color: textColor, fontSize: 45), // Style as needed
-                      // ),
-                      child: orbCount == 1
-                          ? OrbDesign(size: orbSize, color: orbColor)
-                          : orbCount == 2
-                              ? TwoOrbLayout(orbSize: orbSize, color: orbColor)
-                              : orbCount == 3
-                                  ? MultiOrbLayout(
-                                      orbSize: orbSize,
-                                      spacing: 1.0,
-                                      color: orbColor,
-                                    )
-                                  : orbCount != null && orbCount >= 4
-                                      ? Text(
-                                          "Error Orb: $orbCount",
-                                          style: TextStyle(color: orbColor),
-                                        )
-                                      : Container()),
-                );
+              return GestureDetector(
+                onTap: () async {
+                  int row = index ~/ widget.gameLogic.numColumns;
+                  int col = index % widget.gameLogic.numColumns;
+                  if (kDebugMode) {
+                    print('Row: $row, Column: $col, Index: $index');
+                  }
+                  // Await the async operation outside of setState
+                  await widget.gameLogic.onTapCell(index);
+                  // Then call setState to update the UI
+                  setState(() {});
+                },
+                child: Container(
+                    alignment: Alignment.center,
+                    decoration: BoxDecoration(
+                      color: Colors.black,
+                      border: Border.all(color: playerColors[_currentPlayerId]),
+                    ),
+                    // child: Text(
+                    //   widget.gameLogic.cellStates[index]?.toString() ?? '',
+                    //   style: TextStyle(
+                    //       color: textColor, fontSize: 45), // Style as needed
+                    // ),
+                    child: orbCount == 1
+                        ? OrbDesign(size: orbSize, color: orbColor)
+                        : orbCount == 2
+                            ? TwoOrbLayout(orbSize: orbSize, color: orbColor)
+                            : orbCount == 3
+                                ? MultiOrbLayout(
+                                    orbSize: orbSize,
+                                    spacing: 1.0,
+                                    color: orbColor,
+                                  )
+                                : orbCount != null && orbCount >= 4
+                                    ? Text(
+                                        "Error Orb: $orbCount",
+                                        style: TextStyle(color: orbColor),
+                                      )
+                                    : Container()),
+              );
               // }
             },
           ),
