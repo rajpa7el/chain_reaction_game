@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\rajpa\OneDrive\Desktop\chain_reaction_game\build\windows\x64\CMakeFiles\8706449976f93023a94608c119e860e3\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{C9004154-1A35-3436-AE6A-49B444CD75FE}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

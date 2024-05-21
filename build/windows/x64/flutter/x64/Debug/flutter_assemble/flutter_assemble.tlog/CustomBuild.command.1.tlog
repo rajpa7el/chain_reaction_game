@@ -1,0 +1,28 @@
+^C:\USERS\RAJPA\ONEDRIVE\DESKTOP\CHAIN_REACTION_GAME\BUILD\WINDOWS\X64\CMAKEFILES\611E9520256520F0C1B56DC35E5C1EAB\FLUTTER_WINDOWS.DLL.RULE
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -E env FLUTTER_ROOT=C:\src\flutter_windows_3.16.2-stable\flutter PROJECT_DIR=C:\Users\rajpa\OneDrive\Desktop\chain_reaction_game FLUTTER_ROOT=C:\src\flutter_windows_3.16.2-stable\flutter FLUTTER_EPHEMERAL_DIR=C:\Users\rajpa\OneDrive\Desktop\chain_reaction_game\windows\flutter\ephemeral PROJECT_DIR=C:\Users\rajpa\OneDrive\Desktop\chain_reaction_game FLUTTER_TARGET=C:\Users\rajpa\OneDrive\Desktop\chain_reaction_game\lib\main.dart DART_DEFINES=RkxVVFRFUl9XRUJfQVVUT19ERVRFQ1Q9dHJ1ZQ==,RkxVVFRFUl9XRUJfQ0FOVkFTS0lUX1VSTD1odHRwczovL3d3dy5nc3RhdGljLmNvbS9mbHV0dGVyLWNhbnZhc2tpdC9jZjdhOWQwODAwZjJhNWRhMTY2ZGJlMGViOWZiMjQ3NjAxODI2OWIxLw== DART_OBFUSCATION=false TRACK_WIDGET_CREATION=true TREE_SHAKE_ICONS=false PACKAGE_CONFIG=C:\Users\rajpa\OneDrive\Desktop\chain_reaction_game\.dart_tool\package_config.json C:/src/flutter_windows_3.16.2-stable/flutter/packages/flutter_tools/bin/tool_backend.bat windows-x64 Debug
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\RAJPA\ONEDRIVE\DESKTOP\CHAIN_REACTION_GAME\BUILD\WINDOWS\X64\CMAKEFILES\017966F09988F4D04B55BCC8FA76BE43\FLUTTER_ASSEMBLE.RULE
+setlocal
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^C:\USERS\RAJPA\ONEDRIVE\DESKTOP\CHAIN_REACTION_GAME\WINDOWS\FLUTTER\CMAKELISTS.TXT
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/Users/rajpa/OneDrive/Desktop/chain_reaction_game/windows -BC:/Users/rajpa/OneDrive/Desktop/chain_reaction_game/build/windows/x64 --check-stamp-file C:/Users/rajpa/OneDrive/Desktop/chain_reaction_game/build/windows/x64/flutter/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
