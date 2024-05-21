@@ -1,4 +1,3 @@
-import 'package:chain_reaction_app/common/global.dart';
 
 class GameLogic {
   int noOfPlayers;
